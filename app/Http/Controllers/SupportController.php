@@ -13,7 +13,12 @@ class SupportController extends Controller
      */
     public function index()
     {
-        //
+
+        $supports = Support::latest()->paginate(10)->withQueryString();
+
+        return view('supports.index', [
+            'supports' => $supports,
+        ]);
     }
 
     /**
