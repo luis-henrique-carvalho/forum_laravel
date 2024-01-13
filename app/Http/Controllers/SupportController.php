@@ -8,6 +8,7 @@ use App\Models\Support;
 
 class SupportController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      */
@@ -26,7 +27,7 @@ class SupportController extends Controller
      */
     public function create()
     {
-        //
+        return view('supports.create');
     }
 
     /**
@@ -34,7 +35,9 @@ class SupportController extends Controller
      */
     public function store(StoreSupportRequest $request)
     {
-        //
+        Support::create($request->validated());
+
+        return redirect()->route('supports.index')->withSuccess('Suporte criado com sucesso!');
     }
 
     /**
@@ -42,7 +45,9 @@ class SupportController extends Controller
      */
     public function show(Support $support)
     {
-        //
+        return view('supports.show', [
+            'support' => $support,
+        ]);
     }
 
     /**
