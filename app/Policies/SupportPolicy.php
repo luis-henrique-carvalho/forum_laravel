@@ -12,7 +12,7 @@ class SupportPolicy
      */
     public function viewAny(User $user): bool
     {
-        //
+        return $user->can('user');
     }
 
     /**
@@ -20,7 +20,7 @@ class SupportPolicy
      */
     public function view(User $user, Support $support): bool
     {
-        //
+        return $user->can('user');
     }
 
     /**
@@ -28,7 +28,7 @@ class SupportPolicy
      */
     public function create(User $user): bool
     {
-        //
+        return $user->can('user');
     }
 
     /**
@@ -36,7 +36,7 @@ class SupportPolicy
      */
     public function update(User $user, Support $support): bool
     {
-        //
+        return $user->can('user');
     }
 
     /**
@@ -44,7 +44,7 @@ class SupportPolicy
      */
     public function delete(User $user, Support $support): bool
     {
-        //
+        return $user->can('user');
     }
 
     /**
@@ -52,7 +52,7 @@ class SupportPolicy
      */
     public function restore(User $user, Support $support): bool
     {
-        //
+        return $user->can('user');
     }
 
     /**
@@ -60,6 +60,6 @@ class SupportPolicy
      */
     public function forceDelete(User $user, Support $support): bool
     {
-        //
+        return $user->can('user');
     }
 }

@@ -55,7 +55,9 @@ class SupportController extends Controller
      */
     public function edit(Support $support)
     {
-        //
+        return view('supports.edit', [
+            'support' => $support,
+        ]);
     }
 
     /**
@@ -63,7 +65,9 @@ class SupportController extends Controller
      */
     public function update(UpdateSupportRequest $request, Support $support)
     {
-        //
+        $support->update($request->validated());
+
+        return redirect()->route('supports.index')->withSuccess('Suporte atualizado com sucesso!');
     }
 
     /**
@@ -71,6 +75,8 @@ class SupportController extends Controller
      */
     public function destroy(Support $support)
     {
-        //
+        $support->delete();
+
+        return redirect()->route('supports.index')->withSuccess('Suporte excluído com sucesso!');
     }
 }

@@ -94,13 +94,13 @@
                                                 <i class="fas fa-pencil-alt px-1"></i>
                                             </a>
                                         @endcan
-                                        @can('delete', $support)
+                                        {{-- @can('delete', $support) --}}
                                             <button type="button" class="btn btn-danger" data-toggle="modal"
                                                 data-target="#modal-delete"
                                                 data-action="{{ route('supports.destroy', $support->id) }}">
                                                 <i class="fas fa-trash px-1"></i>
                                             </button>
-                                        @endcan
+                                        {{-- @endcan --}}
                                     </div>
                                 </td>
                             </tr>
