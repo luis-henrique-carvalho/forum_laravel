@@ -16,4 +16,4 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::get('/supports', [App\Http\Controllers\SupportController::class, 'index']);
+Route::resource('/supports', App\Http\Controllers\SupportController::class);
