@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Models\Support;
 use Illuminate\Foundation\Http\FormRequest;
 
 class StoreSupportRequest extends FormRequest
@@ -11,7 +12,7 @@ class StoreSupportRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -21,8 +22,6 @@ class StoreSupportRequest extends FormRequest
      */
     public function rules(): array
     {
-        return [
-            //
-        ];
+        return Support::saveRules();
     }
 }
